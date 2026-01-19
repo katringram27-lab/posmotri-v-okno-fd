@@ -63,24 +63,26 @@ ol {
 
 .result {
   display: inline-block;
-  align-items: flex-end;
+  width: 711px;
+  height: 456px;
+  align-self: flex-end;
   margin-top: 78px;
 }
 
 .result__video-container {
   width: 711px;
-  margin-bottom: 16px;
   position: relative;
+  margin-bottom: 16px;
 }
 
 .result__video {
   width: 711px;
-  min-height: 386px;
-  object-fit: contain;
+  height: 386px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__details {
-  gap: 26px;
   width: 100%;
   height: 100%;
   display: inline-block;
@@ -93,6 +95,7 @@ ol {
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
+  height: 54px;
 }
 
 .content__list {
@@ -116,6 +119,10 @@ ol {
 
 .content__video-card-description-container {
   flex-grow: 1;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .content__video-card-description {
@@ -128,12 +135,11 @@ ol {
   height: 103px;
   min-width: 196px;
   object-fit: cover;
-  object-position: right;
+  object-position: center;
 }
 
 .content__list-container {
   overflow-y: auto;
-  overflow-x: none;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -149,7 +155,7 @@ ol {
 }
 
 .content__card-link_current {
-  background-color: #1b1919;
+  background-color: #545050;
 }
 
 .content__card-link:active {
@@ -176,24 +182,29 @@ ol {
   font-size: 30px;
   text-transform: uppercase;
   font-weight: bold;
+  line-height: 100%;
   width: 196px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-bottom: 6px;
 }
 
 .content__video-card-description {
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  line-height: 16px;
-  line-clamp: 1;
-  white-space: nowrap;
+  line-height: 16.2px;
+  font-weight: 400;
+  line-clamp: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .title {
+  padding: 0px 0px 26px 0px;
   color: #fff;
   font-family: 'Oswald', sans-serif;
   font-size: 75px;
@@ -204,48 +215,32 @@ ol {
 
 .content__accent {
   color: #545050;
-  font-family: 'Oswald', sans-serif;
-  font-size: 75px;
-  font-weight: bold;
-  line-height: 94%;
-  text-transform: uppercase;
 }
 
 .search-form__fieldset-title {
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 400;
   line-height: auto;
+  padding-bottom: 5px;
 }
 
 .search-form__textfield {
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 400;
   line-height: auto;
   cursor: pointer;
-}
-
-.search-form__label-text .visually-hidden {
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  font-weight: normal;
-  line-height: auto;
 }
 
 .search-form__label-text {
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 400;
   line-height: auto;
-}
-
-.search-form__chexbox .visually-hidden {
-  color: #fff;
 }
 
 .visually-hidden {
@@ -277,7 +272,7 @@ ol {
 }
 
 input[type=text] {
-  width: 225px;
+  min-width: 225px;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   border-left: none;
@@ -293,11 +288,6 @@ input[type=text] {
 
 .search-form__textfield:focus {
   outline: none;
-}
-
-.search-form__textfield:active {
-  border-right: 1px solid #fff;
-  border-left: 1px solid #fff;
 }
 
 .search-form__label:hover {
@@ -340,19 +330,21 @@ input[type=text] {
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: bold;
   line-height: auto;
   border: 1px solid #fff;
   background-color: #1b1919;
   cursor: pointer;
+  height: 34px;
 }
 
 .search-form__submit-button {
   align-self: center;
-  width: 194px;
-  height: 34px;
+  min-width: 194px;
+  min-height: 34px;
   cursor: pointer;
   padding: 6px 73px;
+  margin-top: 20px;
 }
 
 .search-form__submit-button:focus-visible {
@@ -362,8 +354,8 @@ input[type=text] {
 
 .more-button {
   width: 100%;
-  height: 34px;
   cursor: pointer;
+  padding: 6px 142px;
 }
 
 .button:hover {
@@ -372,23 +364,11 @@ input[type=text] {
 
 .button:active {
   background-color: #545050;
+  text-decoration: none;
 }
 
 .button:focus {
   outline: none;
-}
-
-.more-button:active {
-  text-decoration: none;
-}
-
-.search-form__submit-button:active {
-  text-decoration: none;
-}
-
-.more-button:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
 }
 
 .button:focus-visible {
